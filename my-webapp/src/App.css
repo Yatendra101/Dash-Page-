@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styling */
+body {
+  @apply font-sans bg-gray-50 text-gray-900;
+}
+
+/* Sidebar styling */
+.sidebar {
+  @apply w-64 bg-gray-50 top-20 min-h-screen p-6;
+}
+
+.sidebar a {
+  @apply block text-gray-600 hover:text-gray-800 py-2 pl-4 mb-2 rounded-lg font-medium;
+}
+
+.sidebar a.active {
+  @apply bg-purple-200 text-purple-900;
+}
+
+/* Header bar styling */
+.header-bar {
+  @apply bg-white shadow-md p-4 left-0 flex justify-between items-center;
+}
+
+.header-bar .logo {
+  @apply text-xl font-bold text-purple-600;
+}
+
+.header-bar .user-info {
+  @apply flex items-center space-x-2;
+}
+
+.header-bar .user-info img {
+  @apply w-8 h-8 rounded-full;
+}
+
+.header-bar .user-info span {
+  @apply text-gray-800 font-semibold;
+}
+
+/* Main content styling */
+.main-content {
+  @apply p-6;
+}
+
+.main-content h1 {
+  @apply text-3xl font-semibold text-gray-800;
+}
+
+/* Card styling */
+.card {
+  @apply bg-white shadow-lg rounded-lg p-6;
+}
