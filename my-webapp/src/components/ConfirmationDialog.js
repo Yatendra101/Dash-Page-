@@ -1,4 +1,3 @@
-// ConfirmationDialog.js
 import React from 'react';
 
 const ConfirmationDialog = ({ isOpen, onClose, onConfirm }) => {
@@ -11,10 +10,10 @@ const ConfirmationDialog = ({ isOpen, onClose, onConfirm }) => {
         <p className="mb-4">
           Are you sure you want to delete this member's details? This action cannot be undone.
         </p>
-        <div className="flex justify-end">
+        <div className="flex justify-end space-x-2">
           <button
             onClick={onConfirm}
-            className="bg-purple-700 text-white py-2 px-4 rounded-md hover:bg-purple-800 transition mr-2"
+            className="bg-purple-700 text-white py-2 px-4 rounded-md hover:bg-purple-800 transition"
           >
             Delete
           </button>

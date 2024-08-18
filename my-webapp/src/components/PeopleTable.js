@@ -136,11 +136,18 @@ const PeopleTable = ({ data = [], statusFilter = 'All', onAddMember }) => {
 
   const confirmDelete = () => {
     console.log('Confirming delete for:', personToDelete); // Debug log
-    // Implement delete functionality here
+    if (personToDelete) {
+      // Implement delete functionality here
+      const updatedData = data.filter(person => person.id !== personToDelete.id);
+      console.log('Updated data:', updatedData); // Debug log
+      // Update the state or perform an API call to delete the person
+    }
     setShowDeleteDialog(false);
+    setPersonToDelete(null);
   };
 
   const closeDialog = () => {
+    console.log('Closing delete dialog'); // Debug log
     setShowDeleteDialog(false);
     setPersonToDelete(null);
   };
@@ -247,15 +254,13 @@ const PeopleTable = ({ data = [], statusFilter = 'All', onAddMember }) => {
         <EditProfileForm person={editPerson} onClose={closeEditForm} />
       )}
       {showDeleteDialog && (
-        <ConfirmationDialog
-          title="DELETE MEMBER DETAILS"
-          text="Are you sure you want to delete this member details? This action cannot be undone."
-          confirmButtonText="Delete"
-          confirmButtonClass="bg-purple-700 text-white py-2 px-4 rounded-md hover:bg-purple-800 transition"
-          onConfirm={confirmDelete}
-          onCancel={closeDialog}
-        />
-      )}
+  <ConfirmationDialog
+    isOpen={showDeleteDialog}
+    onConfirm={confirmDelete}
+    onClose={closeDialog}
+  />
+)}
+      
     </div>
   );
 };
